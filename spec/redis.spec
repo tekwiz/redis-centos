@@ -3,8 +3,8 @@
 
 Summary: redis
 Name: redis
-Version: 2.0.0
-Release: rc2
+Version: 2.4.0
+Release: rc8
 License: BSD
 Group: Applications/Multimedia
 URL: http://code.google.com/p/redis/
@@ -67,7 +67,7 @@ prog="redis-server"
 
 start() {
   echo -n $"Starting $prog: "
-  daemon --user redis --pidfile %{pid_file} %{_sbindir}/$prog /etc/redis.conf
+  daemon --user redis --pidfile %{pid_file} %{_bindir}/$prog /etc/redis.conf
   RETVAL=$?
   echo
   [ $RETVAL -eq 0 ] && touch %{_localstatedir}/lock/subsys/$prog
@@ -139,10 +139,7 @@ EOF
 
 %install
 %{__rm} -rf %{buildroot}
-mkdir -p %{buildroot}%{_bindir}
-%{__install} -Dp -m 0755 redis-server %{buildroot}%{_sbindir}/redis-server
-%{__install} -Dp -m 0755 redis-benchmark %{buildroot}%{_bindir}/redis-benchmark
-%{__install} -Dp -m 0755 redis-cli %{buildroot}%{_bindir}/redis-cli
+make PREFIX=%{buildroot}/usr install
 
 %{__install} -Dp -m 0755 redis.logrotate %{buildroot}%{_sysconfdir}/logrotate.d/redis
 %{__install} -Dp -m 0755 redis.sysv %{buildroot}%{_sysconfdir}/init.d/redis
@@ -179,10 +176,8 @@ fi
 
 %files
 %defattr(-, root, root, 0755)
-%doc doc/*.html
-%{_sbindir}/redis-server
-%{_bindir}/redis-benchmark
-%{_bindir}/redis-cli
+#%doc doc/*.html
+/usr/bin/*
 %{_sysconfdir}/init.d/redis
 %config(noreplace) %{_sysconfdir}/redis.conf
 %{_sysconfdir}/logrotate.d/redis
