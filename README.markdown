@@ -13,6 +13,8 @@ Perform the following on a build box as root.
 
 ## Download Redis
 
+    # with 2.4.0 intstructions are the same; just replacing 1.3.9 with 2.4.0
+    
     cd /tmp
     wget http://github.com/antirez/redis/tarball/v1.3.9
     tar -xzf antirez-redis-v1.3.9-0-gd4dd655.tar.gz
@@ -33,7 +35,7 @@ Perform the following on a build box as root.
 
 The resulting RPM will be:
 
-    ~/rpmbuild/RPMS/x86_64/redis-1.3.9-1.x86_64.rpm
+    ~/rpmbuild/RPMS/x86_64/redis-2.4.0.x86_64.rpm
 
 ## Credits
 
