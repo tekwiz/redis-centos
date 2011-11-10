@@ -3,8 +3,8 @@
 
 Summary: redis
 Name: redis
-Version: 2.4.0
-Release: rc8
+Version: 2.4.2
+Release: 1
 License: BSD
 Group: Applications/Multimedia
 URL: http://code.google.com/p/redis/

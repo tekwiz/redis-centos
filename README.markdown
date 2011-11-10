@@ -13,14 +13,8 @@ Perform the following on a build box as root.
 
 ## Download Redis
 
-    # with 2.4.0 intstructions are the same; just replacing 1.3.9 with 2.4.0
-    
-    cd /tmp
-    wget http://github.com/antirez/redis/tarball/v1.3.9
-    tar -xzf antirez-redis-v1.3.9-0-gd4dd655.tar.gz
-    mv antirez-redis-d495a77 redis-1.3.9
-    tar -czf redis-1.3.9.tar.gz redis-1.3.9
-    cp redis-1.3.9.tar.gz ~/rpmbuild/SOURCES/
+    cd ~/rpmbuild/SOURCES/
+    wget http://redis.googlecode.com/files/redis-2.4.2.tar.gz
 
 ## Get Necessary System-specific Configs
 
