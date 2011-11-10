@@ -9,10 +9,10 @@ License: BSD
 Group: Applications/Multimedia
 URL: http://code.google.com/p/redis/
 
-Source0: redis-%{version}-%{release}.tar.gz
+Source0: redis-%{version}.tar.gz
 Source1: redis.conf
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: gcc, make
 Requires(post): /sbin/chkconfig /usr/sbin/useradd
 Requires(preun): /sbin/chkconfig, /sbin/service
