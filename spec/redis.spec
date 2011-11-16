@@ -3,13 +3,13 @@
 
 Summary: redis
 Name: redis
-Version: 2.4.0
-Release: rc8
+Version: 2.4.2
+Release: 1
 License: BSD
 Group: Applications/Multimedia
 URL: http://code.google.com/p/redis/
 
-Source0: redis-%{version}-%{release}.tar.gz
+Source0: redis-%{version}.tar.gz
 Source1: redis.conf
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
